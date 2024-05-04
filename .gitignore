@@ -3,3 +3,7 @@ Uniques/
 __pycache__/
 *.pyc
 *.wav
+
+/shelf/
+/workspace.xml
+/.idea
