@@ -2,7 +2,7 @@ blank
 Conjuration
 Necromancy
 Evocation
-Abjuration 
+Abjuration
 Transmutation
 Divination
 Enchantment
