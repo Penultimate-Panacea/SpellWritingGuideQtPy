@@ -1,196 +1,154 @@
-#  Form  implementation  generated  from  reading  ui  file  '.\mainwindow.ui' 
- 
-# 
- 
-#  Created  by:  PyQt6  UI  code  generator  6.7.0 
- 
-# 
- 
-#  WARNING:  Any  manual  changes  made  to  this  file  will  be  lost  when  pyuic6  is 
- 
-#  run  again.    Do  not  edit  this  file  unless  you  know  what  you  are  doing. 
- 
- 
- 
-from  PySide6.QtWidgets import  QApplication,  QMainWindow,  QPushButton
+# -*- coding: utf-8 -*-
 
-from  PyQt6  import  QtCore,  QtGui,  QtWidgets
- 
-import  os
- 
- 
- 
-class  MainWindow(QMainWindow): 
- 
-        def  __init__(self): 
-                 super().__init__()
-                 self.setupUi()
-                 self.generateSpell.clicked.connect(self.generateSpellClicked)
- 
+################################################################################
+## Form generated from reading UI file 'mainwindow.ui'
+##
+## Created by: Qt User Interface Compiler version 6.7.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-        def  generateSpellClicked(self):
-            gen_level  =  "1"
-            gen_range  =  "Sight".lower()
-            gen_area  =  "Cylinder".lower()
-                gen_dtype  =  "poison"
-                gen_school  =  "evocation"
-                os.system(f"python3  writer.py  -level  {gen_level}  -range  {gen_range}  -area  {gen_area}  -dtype  {gen_dtype}  -school  {gen_school}")
-         def  setupUi(self,  MainWindow):
-                MainWindow.setObjectName("MainWindow")
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QLabel,
+    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
+    QWidget)
 
-                MainWindow.resize(1414,  905)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(963, 392)
+        MainWindow.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
+        icon = QIcon()
+        icon.addFile(u"../../Downloads/icons8-magic-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.generateSpell = QPushButton(self.centralwidget)
+        self.generateSpell.setObjectName(u"generateSpell")
+        self.generateSpell.setGeometry(QRect(20, 280, 200, 50))
+        icon1 = QIcon(QIcon.fromTheme(u"emblem-synchronized"))
+        self.generateSpell.setIcon(icon1)
+        self.generateSpell.setFlat(False)
+        self.saveSpellImage = QPushButton(self.centralwidget)
+        self.saveSpellImage.setObjectName(u"saveSpellImage")
+        self.saveSpellImage.setGeometry(QRect(270, 280, 200, 50))
+        icon2 = QIcon(QIcon.fromTheme(u"document-save"))
+        self.saveSpellImage.setIcon(icon2)
+        self.label_6 = QLabel(self.centralwidget)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(12, 32, 500, 44))
+        font = QFont()
+        font.setFamilies([u"Book Antiqua"])
+        font.setPointSize(26)
+        self.label_6.setFont(font)
+        self.label_7 = QLabel(self.centralwidget)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(12, 82, 284, 25))
+        font1 = QFont()
+        font1.setFamilies([u"Century Gothic"])
+        font1.setPointSize(16)
+        self.label_7.setFont(font1)
+        self.spellDisplayLabel = QLabel(self.centralwidget)
+        self.spellDisplayLabel.setObjectName(u"spellDisplayLabel")
+        self.spellDisplayLabel.setGeometry(QRect(530, 40, 400, 300))
+        self.spellDisplayLabel.setPixmap(QPixmap(u"resources/default output.png"))
+        self.spellDisplayLabel.setScaledContents(True)
+        self.layoutWidget = QWidget(self.centralwidget)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(12, 113, 461, 161))
+        self.formLayout = QFormLayout(self.layoutWidget)
+        self.formLayout.setObjectName(u"formLayout")
+        self.formLayout.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.layoutWidget)
+        self.label.setObjectName(u"label")
 
-                self.centralwidget  =  QtWidgets.QWidget(parent=MainWindow)
+        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label)
 
-                self.centralwidget.setObjectName("centralwidget")
- 
-                self.generateSpell  =  QtWidgets.QPushButton(parent=self.centralwidget)
- 
-                self.generateSpell.setGeometry(QtCore.QRect(10,  760,  291,  51))
- 
-                self.generateSpell.setDefault(False)
- 
-                self.generateSpell.setFlat(False)
- 
-                self.generateSpell.setObjectName("generateSpell")
- 
-                self.spellDisplay  =  QtWidgets.QGraphicsView(parent=self.centralwidget)
- 
-                self.spellDisplay.setGeometry(QtCore.QRect(320,  10,  1067,  800))
- 
-                self.spellDisplay.setAutoFillBackground(False)
- 
-                self.spellDisplay.setLineWidth(6)
- 
-                self.spellDisplay.setObjectName("spellDisplay")
- 
-                self.saveSpellImage  =  QtWidgets.QPushButton(parent=self.centralwidget)
- 
-                self.saveSpellImage.setGeometry(QtCore.QRect(1190,  820,  191,  51))
- 
-                self.saveSpellImage.setObjectName("saveSpellImage")
- 
-                self.generateSpell_2  =  QtWidgets.QPushButton(parent=self.centralwidget)
- 
-                self.generateSpell_2.setGeometry(QtCore.QRect(10,  310,  291,  51))
- 
-                self.generateSpell_2.setObjectName("generateSpell_2")
- 
-                self.label_6  =  QtWidgets.QLabel(parent=self.centralwidget)
- 
-                self.label_6.setGeometry(QtCore.QRect(30,  30,  231,  31))
- 
-                self.label_6.setObjectName("label_6")
- 
-                self.label_7  =  QtWidgets.QLabel(parent=self.centralwidget)
- 
-                self.label_7.setGeometry(QtCore.QRect(30,  70,  221,  31))
- 
-                self.label_7.setObjectName("label_7")
- 
-                self.progressBar  =  QtWidgets.QProgressBar(parent=self.centralwidget)
- 
-                self.progressBar.setGeometry(QtCore.QRect(40,  370,  221,  23))
- 
-                self.progressBar.setProperty("value",  24)
- 
-                self.progressBar.setObjectName("progressBar")
- 
-                self.splitter  =  QtWidgets.QSplitter(parent=self.centralwidget)
- 
-                self.splitter.setGeometry(QtCore.QRect(130,  400,  171,  155))
- 
-                self.splitter.setOrientation(QtCore.Qt.Orientation.Vertical)
- 
-                self.splitter.setObjectName("splitter")
- 
-                self.comboBox  =  QtWidgets.QComboBox(parent=self.splitter)
- 
-                self.comboBox.setObjectName("comboBox")
- 
-                self.comboBox_2  =  QtWidgets.QComboBox(parent=self.splitter)
- 
-                self.comboBox_2.setObjectName("comboBox_2")
- 
-                self.comboBox_3  =  QtWidgets.QComboBox(parent=self.splitter)
- 
-                self.comboBox_3.setObjectName("comboBox_3")
- 
-                self.comboBox_4  =  QtWidgets.QComboBox(parent=self.splitter)
- 
-                self.comboBox_4.setObjectName("comboBox_4")
- 
-                self.comboBox_5  =  QtWidgets.QComboBox(parent=self.splitter)
- 
-                self.comboBox_5.setObjectName("comboBox_5")
- 
-                self.splitter_2  =  QtWidgets.QSplitter(parent=self.centralwidget)
- 
-                self.splitter_2.setGeometry(QtCore.QRect(12,  400,  111,  151))
- 
-                self.splitter_2.setOrientation(QtCore.Qt.Orientation.Vertical)
- 
-                self.splitter_2.setObjectName("splitter_2")
- 
-                self.label  =  QtWidgets.QLabel(parent=self.splitter_2)
- 
-                self.label.setObjectName("label")
- 
-                self.label_2  =  QtWidgets.QLabel(parent=self.splitter_2)
- 
-                self.label_2.setObjectName("label_2")
- 
-                self.label_3  =  QtWidgets.QLabel(parent=self.splitter_2)
- 
-                self.label_3.setObjectName("label_3")
- 
-                self.label_4  =  QtWidgets.QLabel(parent=self.splitter_2)
- 
-                self.label_4.setObjectName("label_4")
- 
-                self.label_5  =  QtWidgets.QLabel(parent=self.splitter_2)
- 
-                self.label_5.setObjectName("label_5")
- 
-                MainWindow.setCentralWidget(self.centralwidget)
- 
-                self.statusbar  =  QtWidgets.QStatusBar(parent=MainWindow)
- 
-                self.statusbar.setObjectName("statusbar")
- 
-                MainWindow.setStatusBar(self.statusbar)
- 
- 
- 
-                self.retranslateUi(MainWindow)
- 
-                QtCore.QMetaObject.connectSlotsByName(MainWindow)
- 
- 
- 
-        def  retranslateUi(self,  MainWindow): 
- 
-                _translate  =  QtCore.QCoreApplication.translate 
- 
-                MainWindow.setWindowTitle(_translate("MainWindow",  "MainWindow")) 
- 
-                self.generateSpell.setText(_translate("MainWindow",  "Generate  Spell")) 
- 
-                self.saveSpellImage.setText(_translate("MainWindow",  "Save  Spell  Image")) 
- 
-                self.generateSpell_2.setText(_translate("MainWindow",  "Load  Attributes")) 
- 
-                self.label_6.setText(_translate("MainWindow",  "Gorilla  of  Destiny\'s  Spell  Scriber")) 
- 
-                self.label_7.setText(_translate("MainWindow",  "UI  by  Penultimate_Panacea")) 
- 
-                self.label.setText(_translate("MainWindow",  "Level")) 
- 
-                self.label_2.setText(_translate("MainWindow",  "Range")) 
- 
-                self.label_3.setText(_translate("MainWindow",  "Area")) 
- 
-                self.label_4.setText(_translate("MainWindow",  "Damage  Type")) 
- 
-                self.label_5.setText(_translate("MainWindow",  "School"))
+        self.levelComboBox = QComboBox(self.layoutWidget)
+        self.levelComboBox.setObjectName(u"levelComboBox")
+
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.levelComboBox)
+
+        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label_2)
+
+        self.rangeComboBox = QComboBox(self.layoutWidget)
+        self.rangeComboBox.setObjectName(u"rangeComboBox")
+
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.rangeComboBox)
+
+        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label_3)
+
+        self.areaComboBox = QComboBox(self.layoutWidget)
+        self.areaComboBox.setObjectName(u"areaComboBox")
+
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.areaComboBox)
+
+        self.label_4 = QLabel(self.layoutWidget)
+        self.label_4.setObjectName(u"label_4")
+
+        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.label_4)
+
+        self.dtypeComboBox = QComboBox(self.layoutWidget)
+        self.dtypeComboBox.setObjectName(u"dtypeComboBox")
+
+        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.dtypeComboBox)
+
+        self.label_5 = QLabel(self.layoutWidget)
+        self.label_5.setObjectName(u"label_5")
+
+        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.label_5)
+
+        self.schoolComboBox = QComboBox(self.layoutWidget)
+        self.schoolComboBox.setObjectName(u"schoolComboBox")
+
+        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.schoolComboBox)
+
+        self.label_8 = QLabel(self.centralwidget)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(20, 340, 461, 21))
+        self.label_9 = QLabel(self.centralwidget)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(0, 0, 461, 21))
+        self.label_9.setTextFormat(Qt.TextFormat.AutoText)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+
+        self.generateSpell.setDefault(False)
+
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Spell Scriber", None))
+        self.generateSpell.setText(QCoreApplication.translate("MainWindow", u"Generate Spell", None))
+        self.saveSpellImage.setText(QCoreApplication.translate("MainWindow", u"Save Spell Image", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Gorilla of Destiny's Spell Scriber", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"UI by Penultimate_Panacea", None))
+        self.spellDisplayLabel.setText("")
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Level", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Range", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Area", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Damage Type", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"School", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"UI Version: 0.1.3 Spell Writing Code from GoD's commit: b5fd502", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"ALPHA PRODUCT", None))
+    # retranslateUi
 
