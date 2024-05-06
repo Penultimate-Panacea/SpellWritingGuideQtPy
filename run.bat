@@ -13,7 +13,7 @@ if %errorlevel% equ 0 (
 
 rem Install required Python packages
 echo Installing required Python packages...
-python -m pip install pyside numpy matplotlib argparse math os tqdm
+python -m pip install pyside6 numpy matplotlib argparse math os tqdm
 
 rem Run Python script
 python ui.py
