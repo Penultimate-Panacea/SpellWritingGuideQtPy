@@ -5,7 +5,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap, QIcon
 from mainwindow import Ui_MainWindow
-import win32api
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -40,17 +40,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print("File saved as:", file_name)
 
     def populateAttributesfromTxt(self):
-        with open("area_types.txt", 'r') as file:
-            areas = [line.strip() for line in file.readlines()]
-        with open("levels.txt", 'r') as file:
-            levels = [line.strip() for line in file.readlines()]
-        with open("damage_types.txt", 'r') as file:
-            dtypes = [line.strip() for line in file.readlines()]
-        with open("range.txt", 'r') as file:
-            ranges = [line.strip() for line in file.readlines()]
-        with open("school.txt", 'r') as file:
-            schools = [line.strip() for line in file.readlines()]
-
+        areas = ['Blank', 'Cube', 'Line', 'Multiple-Targets', 'Multiple-Targets/Sphere', 'Cone', 'Cone/Sphere', 'Square', 'Circle', 'Sphere', 'Sphere/Cylinder', 'Single-Target', 'Single-Target/Cube', 'Single-Target/Multiple-Targets', 'Single-Target/Cone', 'Single-Target/Sphere', 'Single-Target/Wall', 'Wall', 'Cylinder', 'None']
+        levels = ['blank', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
+        dtypes = ['blank', 'acid', 'bludgeoning', 'cold', 'damage', 'extra', 'fire', 'force', 'lightning', 'necrotic', 'nonmagical', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
+        ranges = ['blank', '10-feet radius', '100-feet line', '15-feet cone', '15-feet cube', '15-feet radius', '30-feet cone', '30-feet line', '30-feet radius', '5-feet radius', '60-feet cone', '60-feet line', 'Point (1 miles)', 'Point (10 feet)', 'Point (1000 feet)', 'Point (120 feet)', 'Point (150 feet)', 'Point (30 feet)', 'Point (300 feet)', 'Point (5 feet)', 'Point (500 feet)', 'Point (60 feet)', 'Point (90 feet)', 'Self', 'Sight', 'Special', 'Touch']
+        schools = ['blank', 'Conjuration', 'Necromancy', 'Evocation', 'Abjuration', 'Transmutation', 'Divination', 'Enchantment', 'Illusion']
         for area in areas:
             self.areaComboBox.addItem(area)
         for level in levels:
@@ -61,6 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rangeComboBox.addItem(range)
         for school in schools:
             self.schoolComboBox.addItem(school)
+
 
 
 
