@@ -40,15 +40,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print("File saved as:", file_name)
 
     def populateAttributesfromTxt(self):
-        with open("Attributes/area_types.txt", 'r') as file:
+        with open("area_types.txt", 'r') as file:
             areas = [line.strip() for line in file.readlines()]
-        with open("Attributes/levels.txt", 'r') as file:
+        with open("levels.txt", 'r') as file:
             levels = [line.strip() for line in file.readlines()]
-        with open("Attributes/damage_types.txt", 'r') as file:
+        with open("damage_types.txt", 'r') as file:
             dtypes = [line.strip() for line in file.readlines()]
-        with open("Attributes/range.txt", 'r') as file:
+        with open("range.txt", 'r') as file:
             ranges = [line.strip() for line in file.readlines()]
-        with open("Attributes/school.txt", 'r') as file:
+        with open("school.txt", 'r') as file:
             schools = [line.strip() for line in file.readlines()]
 
         for area in areas:
