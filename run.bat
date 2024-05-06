@@ -17,4 +17,4 @@ echo Installing required Python packages...
 python -m pip install pyside numpy matplotlib argparse math os tqdm
 
 rem Run Python script
-python your_script.py
+python ui.py
